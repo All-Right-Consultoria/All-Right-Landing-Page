@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block 'content' %}
+<div class="cases">
+    <h1>Cases</h1>
+    <ul>
+    {% for case in object_list %}
+        <li>
+            <h3>{{ case.titulo }}</h3>
+            <p><span>{{ case.conteudo }}</span></p>
+            <span>{{ case.data_publicacao|date }}</span>
+        </li>
+    {% empty %}
+        <li>Estamos trabalhando nisso!</li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% endblock 'content' %}
