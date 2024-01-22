@@ -1,16 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+:root {
+    --dark-blue: #122766;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(49, 113, 197);
     font-size: 1.2em;
     color: white;
     font-family: 'Outfit', sans-serif;
 }
 .main-page {
-    margin-top: 50px;
     text-align: center;
 }
+
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0px 15vw;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30vw;
+    list-style-type: none;
+}
+
+a {
+    color: var(--dark-blue);
+    font-family: Roboto;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+.header-links a:hover {
+    position: relative;
+    top: -3px;
+    transition: 0.5s;
+}
+.contato {
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    background-color: #2f94a8;
+}
+.header-links .contato:hover {
+    background-color: #122766;
+    text-decoration: none;
+    top: 0;
+}
+.header-logo-img {
+    width: 160px;
+    height: 50px;
+}
+
+/* F O O T E R */
+.footer {
+    height: 30svh;
+    gap: 2rem;
+    padding: 2vh 20vw;
+    background-color: var(--dark-blue);
+    flex-direction: column;
+}
+.footer, .footer-nav-links, .media-links, .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-logo-img {
+    width: 225px;
+    height: 70px;
+}
+.footer-nav-links {
+    justify-content: space-between;
+}
+.footer-nav-links ul {
+    width: 24vw;
+}
+.footer-nav-links a{
+    color: white;
+    font-family: Outfit;
+    font-size: 16px;
+}
+.media-links {
+    gap: 1rem;
+    filter: invert(100%) sepia(1%) saturate(2155%) hue-rotate(28deg) brightness(116%) contrast(100%);
+}
+.media-links a:hover, .footer-nav-links a:hover {
+    opacity: 0.6;
+    transition: 0.3s;
+}
+/* B A N N E R - P R I N C I P A L */
+.apresentacao-geral{
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+.apresentacao-geral, .main-banner {
+    width: 100vw;
+    height: 100svh;
+}
+.main-banner-img {
+    width: 100vw;
+    max-height: 100%;
+}
+.apresentacao {
+    width: 100vw;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(360, 100%, 100%, 0.3);
+}
+.apresentacao hr {
+    width: 100%;
+    color: white;
+    margin-block: 15px;
+}
+.apresentacao h1, .apresentacao h3{
+    text-shadow: 2px 2px 2px hsla(0, 0%, 30%, 0.91);
+    font-weight: bold;
+}
+.apresentacao h1 {
+    font-size: 50px;
+}
+.apresentacao h3 {
+    font-size: 30px;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.apresentacao {
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+/* S E R V I Ç O S */
