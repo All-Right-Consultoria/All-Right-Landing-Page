@@ -6,6 +6,9 @@ from .models import Post, Case
 def LandingPageView(request):
     return render(request, 'index.html')
 
+def AboutPageView(request):
+    return render(request, 'about_us.html')
+
 class CaseListView(ListView):
     model = Case
     template_name = 'cases_list.html'
