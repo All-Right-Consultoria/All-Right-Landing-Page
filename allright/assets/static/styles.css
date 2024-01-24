@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body{
     font-size: 1.2em;
@@ -23,15 +24,11 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 7svh;
     padding: 0px 15vw;
 }
 
 ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 30vw;
     list-style-type: none;
 }
 
@@ -42,7 +39,13 @@ a {
     text-decoration: none;
 
 }
-
+/* H E A D E R */
+.header-links ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
+}
 .header-links a:hover {
     position: relative;
     top: -3px;
@@ -67,56 +70,73 @@ a {
 /* F O O T E R */
 .footer {
     height: 30svh;
-    gap: 2rem;
-    padding: 2vh 20vw;
-    background-color: var(--dark-blue);
-    flex-direction: column;
+    background-position: center;
+    background-size: cover;
 }
-.footer, .footer-nav-links, .media-links, .footer-logo {
+.footer-wrapper {
+    display: flex;
+    gap: 8%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(225, 70%, 24%, 0.8)
+}
+.footer, .footer-nav-links, .media-links, .media-links a, .footer-logo {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.footer-logo-img {
-    width: 225px;
-    height: 70px;
-}
-.footer-nav-links {
-    justify-content: space-between;
-}
-.footer-nav-links ul {
-    width: 24vw;
-}
-.footer-nav-links a{
-    color: white;
-    font-family: Outfit;
-    font-size: 16px;
+.media-links, .footer-nav-links {
+    flex-direction: column;
 }
 .media-links {
-    gap: 1rem;
+    gap: 8px;
+    align-items: start;
+}
+.media-links div {
+    display: flex;
+    gap: 5px;
+}
+.media-links p {
+    margin-left: 10px;
+    color: white;
+}
+.media-links svg {
     filter: invert(100%) sepia(1%) saturate(2155%) hue-rotate(28deg) brightness(116%) contrast(100%);
 }
 .media-links a:hover, .footer-nav-links a:hover {
     opacity: 0.6;
     transition: 0.3s;
 }
+.footer-logo-img {
+    width: 225px;
+    height: 70px;
+}
+.footer-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-nav-links a{
+    color: white;
+    font-family: Outfit;
+    font-size: 16px;
+}
 /* B A N N E R - P R I N C I P A L */
-.apresentacao-geral{
-    position: relative;
+.apresentacao-geral {
     background-position: center;
     background-size: cover;
 }
 .apresentacao-geral, .main-banner {
-    width: 100vw;
-    height: 100svh;
+    height: 93svh;
 }
 .main-banner-img {
-    width: 100vw;
     max-height: 100%;
 }
 .apresentacao {
-    width: 100vw;
-    height: 100svh;
+    height: 93svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,14 +169,7 @@ a {
 }
 
 .apresentacao {
-  /* This section calls the slideInFromLeft animation we defined above */
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 /* S E R V I Ç O S */
-
-
-/* C A S E S */
-.cases {
-    color: #122766;
-}
