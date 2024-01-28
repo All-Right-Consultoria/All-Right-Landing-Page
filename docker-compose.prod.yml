@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./allright/
+      dockerfile: Dockerfile.prod
+    command: gunicorn allright.wsgi:application --bind 0.0.0.0:8000
+    restart: unless-stopped
+    volumes:
+      - static_volume:/home/app/web/static
+      - media_volume:/home/app/web/media
+    expose:
+      - 8000
+    env_file:
+      - ./.env.staging
+
+  nginx:
+    build: ./allright/nginx/
+    volumes:
+      - static_volume:/home/app/web/static
+      - media_volume:/home/app/web/media
+      - ${SSL_LOCATION}:/etc/nginx/ssl
+    ports:
+     - 80:80
+     - 443:443
+    depends_on:
+      - app
+
+volumes:
+  static_volume:
+  media_volume:
