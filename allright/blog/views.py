@@ -16,6 +16,9 @@ class CaseListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['depoimentos'] = Depoimento.objects.all()
+        print(context)
+        for i in context:
+            print(i)
         return context
 
 

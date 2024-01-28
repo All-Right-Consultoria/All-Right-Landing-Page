@@ -17,7 +17,7 @@ class Case(models.Model):
     )
     imagem = models.ImageField(
         verbose_name='Mídia',
-        upload_to='media/',
+        upload_to='case/',
         null=True,
         blank=True,
     )
@@ -42,3 +42,6 @@ class Depoimento(models.Model):
         'Case',
         on_delete=models.CASCADE
     )
+    
+    def __str__(self):
+        return f'{self.case} - Depoimento {self.autor}'
