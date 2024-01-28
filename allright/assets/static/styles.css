@@ -39,6 +39,9 @@ a {
     text-decoration: none;
 
 }
+p, li {
+    color: black;
+}
 /* H E A D E R */
 .header-links ul {
     display: flex;
@@ -63,7 +66,7 @@ a {
     top: 0;
 }
 .header-logo-img {
-    width: 160px;
+    width: 100px;
     height: 50px;
 }
 
@@ -112,7 +115,7 @@ a {
 }
 .footer-logo-img {
     width: 225px;
-    height: 70px;
+    height: 112px;
 }
 .footer-nav-links {
     display: flex;
@@ -125,7 +128,7 @@ a {
     font-size: 16px;
 }
 /* B A N N E R - P R I N C I P A L */
-.apresentacao-geral {
+.apresentacao-geral, .about-us-banner {
     background-position: center;
     background-size: cover;
 }
@@ -135,7 +138,7 @@ a {
 .main-banner-img {
     max-height: 100%;
 }
-.apresentacao {
+.apresentacao, .about-us {
     height: 93svh;
     display: flex;
     flex-direction: column;
@@ -173,3 +176,88 @@ a {
 }
 
 /* S E R V I Ç O S */
+
+.container-card-servicos {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 50px;
+}
+.card-servico {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    width: 45vw;
+}
+.card-servico-content {
+    width: 100%;
+    padding: 30px;
+}
+.card-servico p {
+    line-height: 1.5;
+    font-size: 18px;
+}
+.card-servico ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.card-servico h3 {
+    font-size: 28px;
+    color: black;
+    text-align: start;
+}
+.card-img {
+    height: 550px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+/* S O B R E - N Ó S */
+.about-us-banner {
+    width: 100%;
+    height: 93svh;
+}
+.sobre-nos {
+    display: grid;
+    justify-items: center;
+}
+.container-sobre-nos {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    align-items: center;
+    padding: 100px;
+}
+.texto-sobre-nos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+.sobre-nos img {
+    width: 600px;
+    height: 100%;
+    border-radius: 50px;
+}
+.sobre-nos hr {
+    background-color: var(--dark-blue);
+    height: 3px;
+    width: 100%;
+    margin: 20px 0px 30px 0px;
+}
+.sobre-nos h1 {
+    font-size: 50px;
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+.sobre-nos h1, p {
+    text-align: justify;
+}
+.sobre-nos p {
+    line-height: 2.2;
+    font-size: 20px;
+}
