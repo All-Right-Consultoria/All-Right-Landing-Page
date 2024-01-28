@@ -1,19 +1,56 @@
 {% extends "base.html" %}
 {% load static %}
 {% block 'content' %}
-<div class="cases">
-    <h1>Cases</h1>
-    <ul>
-    {% for case in object_list %}
-        <li>
-            <h3>{{ case.titulo }}</h3>
-            <p><span>{{ case.conteudo }}</span></p>
-            <span>{{ case.data_publicacao|date }}</span>
-        </li>
-    {% empty %}
-        <li>Estamos trabalhando nisso!</li>
-    {% endfor %}
-    </ul>
+<div class="banner-cases">
+    <div class="cases-banner-img" style="background-image: url({% static 'cases-banner.jpg' %});">
+        <div class="texto-banner-cases" >
+            <div class="texto-apresentacao">
+                <h1>Cases</h1>
+                <hr>
+                <h3>Cases de Consultoria e Relatos dos Clientes</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cases" style="background-image: url({% static 'cases-background.jpg' %});">
+    <div class="container-case">
+        <div class="headline-case">
+            <img src="{%static 'case-logo.png' %}" alt="">
+            <h3 class="titulo-case">Case Britagem Barracão</h3>
+        </div>
+        <div class="descricao">
+            <h4>Briefing</h4>
+            <p>
+                Em um diagnóstico inicial, analisamos a estrutura ideal e avaliamos os principais recursos humanos estratégicos disponíveis, providenciando algumas alterações e contratações necessárias. Avaliamos também os filhos e familiares, identificando e sugerindo o melhor aproveitamento individual.
+                <br>
+                No escopo dos trabalhos propusemos fazer a transição, de um empreendimento familiar, para uma empresa estruturada organizacionalmente num organograma profissional, com processos funcionais e sistemicamente integrados.
+                <br>
+                Identificamos os pontos fortes e as principais oportunidades de melhoria, organizando um plano de trabalho direcionado para agregar valor, reduzir riscos, e atingir a efetiva vocação da empresa.
+            </p>
+        </div>
+        <div class="trabalhos-executados">
+            <h4>Trabalhos Executados</h4>
+            <p>
+                Estruturação do Financeiro com Fluxo de Caixa, renegociação do endividamento, alongando prazos e reduzindo taxas e parcelas, permitindo a conclusão de diversos investimentos inacabados, com importante retorno para o negócio. Implantação de um grupo de gestão com reuniões de trabalho semanais e área comercial proativa. Reimplantação do ERP Protheus/Totvs, estruturação do Supply Chain com PCP otimizado pela metodologia DDMRP e ferramenta WA Solutions, Estoques e Tecnologia da Informação. Implantação de Controladoria, reorganização da Contabilidade, análises de custos, preços de venda e rentabilidade. Análise e fechamento, por inviabilidade econômica, da empresa de transporte do grupo. Renegociação dos contratos, gerando ganhos importantes em custos e reposicionamento estratégico com os principais clientes.
+            </p>
+        </div>
+        <div class="depoimentos">
+            <h4>Depoimentos</h4>
+            <span>Mário José Schmitt, sócio fundador</span>
+            <p>“O Daniel tem uma visão bastante ampla dos negócios. A Êxito efetuou um trabalho de muita qualidade e importância para a Ceramfix na organização e estruturação da empresa, permitindo o crescimento sustentado, redução de riscos e aumento dos resultados. Esse trabalho nos ajudou a fechar a importante parceria com o grupo alemão Ardex, multinacional referência mundial em produtos de alta tecnologia no mercado da construção civil.”</p>
+        </div>
+        <!-- <ul>
+        {% for case in object_list %}
+            <li>
+                <h3>Case Britagem Barracão</h3>
+                <p><span>{{ case.conteudo }}</span></p>
+                <span>{{ case.data_publicacao|date }}</span>
+            </li>
+        {% empty %}
+            <li>Estamos trabalhando nisso!</li>
+        {% endfor %}
+        </ul> -->
+    </div>
 </div>
 
 {% endblock 'content' %}

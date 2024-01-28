@@ -138,7 +138,7 @@ p, li {
 .main-banner-img {
     max-height: 100%;
 }
-.apresentacao, .about-us {
+.apresentacao, .about-us, .texto-banner-cases {
     height: 93svh;
     display: flex;
     flex-direction: column;
@@ -171,7 +171,7 @@ p, li {
   }
 }
 
-.apresentacao {
+.apresentacao, .texto-banner-cases {
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
@@ -185,6 +185,7 @@ p, li {
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     padding: 50px;
+    background-color: #ededed;
 }
 .card-servico {
     display: grid;
@@ -260,4 +261,69 @@ p, li {
 .sobre-nos p {
     line-height: 2.2;
     font-size: 20px;
+}
+
+/* C A S E S */
+.cases {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+}
+.container-case {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    gap: 30px;
+}
+.container-case h4{
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.banner-cases {
+    height: 93svh;
+}
+.banner-cases h1, h3, hr{
+    text-shadow: 2px 2px 2px hsla(0, 0%, 30%, 0.91);
+}
+.banner-cases h1 {
+    font-size: 50px;
+    text-align: center;
+}
+.banner-cases hr {
+    border: 1px solid white;
+}
+.banner-cases h3 {
+    font-size: 30px;
+}
+.cases-banner-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+}
+.titulo-cases {
+    color: black;
+    font-size: 60px;
+    text-align: center;
+}
+.headline-case {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+}
+.headline-case img{
+    max-width: 350px;
+    max-height: 350px;
+}
+.headline-case h3 {
+    color: black;
+    font-size: 50px;
+}
+.depoimentos span {
+        font-style: italic;
+        color: black;
 }
