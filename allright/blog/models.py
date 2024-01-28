@@ -1,17 +1,23 @@
 from datetime import datetime
 from django.db import models
 
-class Post(models.Model):
+
+class Case(models.Model):
     titulo = models.CharField(
         max_length=255,
         verbose_name='Título',
     )
-    conteudo = models.TextField(
-        verbose_name='Conteúdo',
+    introducao = models.TextField(
+        verbose_name='Introdução',
+        blank=True,
+        null=True,
     )
-    midia = models.ImageField(
+    trabalho_executado = models.TextField(
+        verbose_name='Trabalho executado',
+    )
+    imagem = models.ImageField(
         verbose_name='Mídia',
-        upload_to='media/',
+        upload_to='case/',
         null=True,
         blank=True,
     )
@@ -19,6 +25,23 @@ class Post(models.Model):
         verbose_name='Data de publicação',
         auto_now_add=True
     )
+    
+    def __str__(self):
+        return self.titulo
 
-class Case(Post):
+
+class Post(Case):
     pass
+
+class Depoimento(models.Model):
+    autor=models.CharField(max_length=255)
+    conteudo=models.TextField(
+        verbose_name='Conteúdo'
+    )
+    case=models.ForeignKey(
+        'Case',
+        on_delete=models.CASCADE
+    )
+    
+    def __str__(self):
+        return f'{self.case} - Depoimento {self.autor}'
