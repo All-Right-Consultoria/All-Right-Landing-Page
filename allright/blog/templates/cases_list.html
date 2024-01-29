@@ -33,12 +33,17 @@
         </div>
         <div class="depoimentos">
             <h4>Depoimentos</h4>
-            {% for depoimento in depoimentos %}
+            <div class="depoimentos-wrapper">
+                {% for depoimento in depoimentos %}
                 {% if depoimento.case.titulo == case.titulo %}
-                    <span>{{ depoimento.autor }}</span>
-                    <p>{{ depoimento.conteudo }}</p>
+                    <div class="depoimento">
+                        <span>{{ depoimento.autor }}</span>
+                        <p>{{ depoimento.conteudo }}</p>
+                    </div>
                 {% endif %}
             {% endfor %}
+            </div>
+            <hr>
         </div>
     </div>
     {% endfor %}
