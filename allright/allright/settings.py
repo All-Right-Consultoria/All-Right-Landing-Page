@@ -26,7 +26,7 @@ SECRET_KEY = environ.get('SECRET_KEY', 'django-insecure-m&byzd6=)rq54aujkl^e(pdw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.allright-consultoria.com.br', 'allright-consultoria.com.br']
 
 
 # Application definition
