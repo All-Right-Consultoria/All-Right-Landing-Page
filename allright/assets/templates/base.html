@@ -10,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script>function showMenu () {
+        const nav = document.getElementById('header-links')
+        nav.style.display === "flex" ? nav.style.display = 'none' : nav.style.display = 'flex'
+    }</script>
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -25,7 +29,7 @@
     <header>
         <div class="header">
             <a href="/"><img src="{% static 'allright-logo.png' %}" alt="header-logo" class="header-logo-img"></a>
-            <div class="header-links">
+            <div class="header-links" id="header-links">
                 <ul>
                     <li><a href="/">HOME</a></li>
                     <li><a href="/#servicos">SERVIÇOS</a></li>
@@ -34,6 +38,7 @@
                     <li><a class="contato" href="#footer">CONTATO</a></li>
                 </ul>
             </div>
+            <button onclick="showMenu()" class="menu-btn"><img src="{% static 'icon-hamburger.svg' %}" alt="menu-button"></button>
         </div>
     </header>
     <main>
