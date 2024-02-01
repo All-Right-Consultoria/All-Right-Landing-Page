@@ -33,9 +33,9 @@ ALLOWED_HOSTS = [
     ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'www.allright-consultoria.com.br',
-    'allright-consultoria.com.br',
-    'localhost'
+    'https://www.allright-consultoria.com.br',
+    'https://allright-consultoria.com.br',
+    'https://localhost'
 ]
 
 # Application definition
