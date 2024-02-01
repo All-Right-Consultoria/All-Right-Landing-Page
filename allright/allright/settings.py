@@ -26,7 +26,11 @@ SECRET_KEY = environ.get('SECRET_KEY', 'django-insecure-m&byzd6=)rq54aujkl^e(pdw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = ['www.allright-consultoria.com.br', 'allright-consultoria.com.br']
+ALLOWED_HOSTS = [
+    'www.allright-consultoria.com.br',
+    'allright-consultoria.com.br',
+    'localhost'
+    ]
 
 
 # Application definition
@@ -81,7 +85,7 @@ WSGI_APPLICATION = 'allright.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db/db.sqlite3',
     }
 }
 
