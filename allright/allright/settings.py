@@ -26,7 +26,7 @@ SECRET_KEY = environ.get('SECRET_KEY', 'django-insecure-m&byzd6=)rq54aujkl^e(pdw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.allright-consultoria.com.br', 'allright-consultoria.com.br']
 
 
 # Application definition
@@ -122,10 +122,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static/'
-
-STATICFILES_DIRS = (
-    BASE_DIR / 'assets/static/',
-)
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
