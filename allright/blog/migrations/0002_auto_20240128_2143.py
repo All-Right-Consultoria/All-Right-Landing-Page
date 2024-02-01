@@ -10,22 +10,22 @@ def create_depoimentos(apps, schema_editor):
     Case = apps.get_model('blog', 'Case')
     Depoimento.objects.using(db_alias).create(
         autor='Antonino Assini, sócio fundador',
-        conteudo='Ficamos bastante satisfeitos com o trabalho do Daniel da Êxito Empresarial em nossa empresa. Podemos destacar a ética e honestidade nas suas ações, englobando os processos a tecnologia e as pessoas.',
+        conteudo='Ficamos bastante satisfeitos com o trabalho do Daniel da Allright Consultoria em nossa empresa. Podemos destacar a ética e honestidade nas suas ações, englobando os processos a tecnologia e as pessoas.',
         case=Case.objects.using(db_alias).get(pk=1),
     )
     Depoimento.objects.using(db_alias).create(
         autor='Juarez Castilho, Castilho, Paolin & Advogados Associados',
-        conteudo=' O trabalho do Daniel da Êxito vem ao encontro das necessidades do advogado, pois ele sabe identificar bem os requisitos e aplicações das demandas, facilitando muito o relacionamento entre empresa e setor jurídico.',
+        conteudo=' O trabalho do Daniel da Allright vem ao encontro das necessidades do advogado, pois ele sabe identificar bem os requisitos e aplicações das demandas, facilitando muito o relacionamento entre empresa e setor jurídico.',
         case=Case.objects.using(db_alias).get(pk=1),
     )
     Depoimento.objects.using(db_alias).create(
         autor='Hugues Boritiyça, WA Solutions Brasil',
-        conteudo='A transformação que o trabalho da Êxito Empresarial proporcionou, em tão pouco tempo na Britagem Barracão, e ainda durante a pandemia da COVID-19, foi realmente surpreendente. Daniel buscou identificar e desenvolver talentos internos utilizando técnicas de gestão e incentivando a capacitação da equipe. Trazendo metodologia de vanguarda para a gestão de suprimentos colocou a Britagem Barracão um passo à frente da concorrência.',
+        conteudo='A transformação que o trabalho da Allright Consultoria proporcionou, em tão pouco tempo na Britagem Barracão, e ainda durante a pandemia da COVID-19, foi realmente surpreendente. Daniel buscou identificar e desenvolver talentos internos utilizando técnicas de gestão e incentivando a capacitação da equipe. Trazendo metodologia de vanguarda para a gestão de suprimentos colocou a Britagem Barracão um passo à frente da concorrência.',
         case=Case.objects.using(db_alias).get(pk=1),
     )
     Depoimento.objects.using(db_alias).create(
         autor='Mário José Schmitt, sócio fundador',
-        conteudo='O Daniel tem uma visão bastante ampla dos negócios. A Êxito efetuou um trabalho de muita qualidade e importância para a Ceramfix na organização e estruturação da empresa, permitindo o crescimento sustentado, redução de riscos e aumento dos resultados. Esse trabalho nos ajudou a fechar a importante parceria com o grupo alemão Ardex, multinacional referência mundial em produtos de alta tecnologia no mercado da construção civil.  ',
+        conteudo='O Daniel tem uma visão bastante ampla dos negócios. A Allright efetuou um trabalho de muita qualidade e importância para a Ceramfix na organização e estruturação da empresa, permitindo o crescimento sustentado, redução de riscos e aumento dos resultados. Esse trabalho nos ajudou a fechar a importante parceria com o grupo alemão Ardex, multinacional referência mundial em produtos de alta tecnologia no mercado da construção civil.  ',
         case=Case.objects.using(db_alias).get(pk=2),
     )
     Depoimento.objects.using(db_alias).create(
@@ -65,7 +65,7 @@ def create_cases(apps, schema_editor):
         Em crescimento constante, a empresa necessitava de uma estrutura adequada a essa realidade. Iniciamos um processo de integração sistêmica do negócio, estabelecendo os melhores fluxos e processos para a operação, utilizando ferramentas de lean manufactoring e dirigida pela demanda.  
         """,
         trabalho_executado="""
-        Estruturação do Financeiro com Fluxo de Caixa, renegociação do endividamento, alongando prazos e reduzindo taxas e parcelas, permitindo a conclusão de diversos investimentos inacabados, com importante retorno para o negócio. Implantação de um grupo de gestão com reuniões de trabalho semanais e área comercial proativa. Reimplantação do ERP Protheus/Totvs, estruturação do Supply Chain com PCP otimizado pela metodologia DDMRP e ferramenta WA Solutions, Estoques e Tecnologia da Informação. Implantação de Controladoria, reorganização da Contabilidade, análises de custos, preços de venda e rentabilidade. Análise e fechamento, por inviabilidade econômica, da empresa de transporte do grupo. Renegociação dos contratos, gerando ganhos importantes em custos e reposicionamento estratégico com os principais clientes. 
+            Planejamento Estratégico, implantação do Plano Operacional (case principal da Handit Planning), compliance, Plano de Cargos e Salários, avaliação por competências e treinamento de lideranças. Reimplantação do ERP Logix/Totvs, implantação do PCP otimizado pela metodologia DDMRP, Controle de Estoques WMS e do Força de Vendas/CRM, otimizado com o Fluig/Totvs. Internalização da Contabilidade, implantação de Business intelligence (BI) e indicadores de performance (KPI’s). Análise de retorno de Investimentos, custos, preços de venda e rentabilidade. Estruturação das áreas de Tecnologia da Informação e Recursos Humanos, Manutenção de Ativos e trabalho estratégico comercial. Coordenação jurídico/tributária e da Due Diligence que resultou na Joint Venture com a multinacional Ardex, parceria firmada devido ao crescimento organizado e estratégico, que despertou o interesse de várias multinacionais.
         """
     )
     case_britagem.imagem.save('britagem_logo.png', ContentFile(britagem_image_data))
