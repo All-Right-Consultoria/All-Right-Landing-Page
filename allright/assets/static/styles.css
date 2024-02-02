@@ -66,8 +66,8 @@ p, li {
     top: 0;
 }
 .header-logo-img {
-    width: 100px;
-    height: 50px;
+    width: 150px;
+    height: 75px;
 }
 
 /* F O O T E R */
@@ -152,6 +152,12 @@ p, li {
     align-items: center;
     background-color: hsla(360, 100%, 100%, 0.3);
 }
+.apresentacao {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
 .apresentacao hr {
     width: 100%;
     color: white;
@@ -166,6 +172,11 @@ p, li {
 }
 .apresentacao h3 {
     font-size: 30px;
+}
+.nossos-cases a {
+    color: white;
+    text-decoration-line: underline;
+    text-underline-offset: 8px;
 }
 
 @keyframes slideInFromLeft {
@@ -361,6 +372,11 @@ p, li {
     width: 85%;
     text-align: center;
 }
+button {
+    background-color: transparent;
+    border: none;
+    filter: brightness(0) saturate(100%)
+}
 
 @media (min-width: 1400px) {
     .card-servico p {
@@ -390,7 +406,7 @@ p, li {
         display: none;
     }
 }
-@media (max-width: 900px)
+@media (max-width: 1000px)
  {
     
     .header-links {
@@ -410,10 +426,15 @@ p, li {
     }
     
 }
-button {
-    background-color: transparent;
-    border: none;
-    filter: brightness(0) saturate(100%)
+
+@media (max-width: 720px) {
+    .headline-case img{
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .headline-case h3 {
+        font-size: 25px;
+    }
 }
 
 @media (max-width: 550px) {
@@ -443,5 +464,12 @@ button {
     }
     .sobre-nos h1 {
         font-size: 40px;
+    }
+    .headline-case {
+        display: flex;
+        flex-direction: column;
+    }
+    .container-case h4{
+        font-size: 20px;
     }
 }
