@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: https://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="720pt"
+    height="360pt"
+    viewBox="0 0 720 360">
+<defs/>
+<circle id="shape0" transform="matrix(0.28828122987364 0 0 0.28828122987364 190.817026004217 100.12406231876)" r="307.2" cx="307.2" cy="307.2" fill="none" stroke="#1297b6" stroke-width="96" stroke-linecap="square" stroke-linejoin="bevel"/><path id="shape01" transform="matrix(0.341624746349635 0 0 0.341624746349635 223.738221828955 95.7567411661617)" fill="#1297b6" fill-rule="evenodd" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M162 390.48L576.72 31.92L489.6 0L162 269.52L84.24 178.8L0 207.6L162 390.48" sodipodi:nodetypes="ccccccc"/><text id="shape1" krita:useRichText="true" text-rendering="auto" krita:textVersion="3" transform="matrix(1.09551601974108 0 0 1.09551601974108 4.26025958368743 236.920581685396)" fill="#ffffff" stroke="none" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" letter-spacing="-1.5" text-anchor="middle" word-spacing="0" style="text-align: start;text-align-last: auto;font-family: Aharoni;font-size: 125;font-weight: 700;"><tspan x="76.5234375">All</tspan></text><text id="shape02" krita:useRichText="true" text-rendering="auto" krita:textVersion="3" transform="matrix(1.09551601974108 0 0 1.09551601974108 386.404982632798 236.920581685396)" fill="#ffffff" stroke="none" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" letter-spacing="-1.5" word-spacing="0" style="text-align: start;text-align-last: auto;font-family: Aharoni;font-size: 125;font-weight: 700;"><tspan x="0">Right</tspan></text>
+</svg>
