@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 
 :root {
-    --dark-blue: #122766;
+    --dark-blue: hsla(225, 70%, 24%, 1);
+    --light-green: #2f94a8;
 }
 
 *{
@@ -54,16 +55,26 @@ p, li {
     top: -3px;
     transition: 0.5s;
 }
-.contato {
+.button-link-header, .button-link{
     color: white;
     padding: 10px 20px;
     border-radius: 50px;
     background-color: #2f94a8;
+    margin: 30px auto;
+    display: block;
+    max-width: fit-content;
 }
-.header-links .contato:hover {
+.header-links .button-link-header:hover {
     background-color: #122766;
     text-decoration: none;
     top: 0;
+    transition: 0.5s;
+}
+.button-link:hover {
+    background-color: #122766;
+    text-decoration: none;
+    top: 0;
+    transition: 0.5s;
 }
 .header-logo-img {
     width: 150px;
@@ -157,6 +168,7 @@ p, li {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-around;
+    background-color: hsla(225, 70%, 24%, 0.5);
 }
 .apresentacao hr {
     width: 100%;
@@ -175,8 +187,6 @@ p, li {
 }
 .nossos-cases a {
     color: white;
-    text-decoration-line: underline;
-    text-underline-offset: 8px;
 }
 
 @keyframes slideInFromLeft {
@@ -194,7 +204,7 @@ p, li {
 
 /* S E R V I Ç O S */
 .servicos {
-    padding: 100px 0 50px 0;
+    padding: 100px 0 0 0;
 }
 .servicos h1 {
     font-size: 50px;
@@ -209,42 +219,61 @@ p, li {
     align-items: center;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr;
-    gap: 50px 0;
-    padding: 5vw;
+    padding: 5vw 5vw 0 5vw;
 }
 .card-servico {
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    width: 70vw;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100vw;
+    &:nth-child(2n-1) {
+        background-color: var(--dark-blue) !important;
+        border-color: var(--dark-blue) !important;
+        color: #fff !important;
+        &:nth-child(2n-1) p, h3{
+            color: #fff !important;
+        }
+        &:nth-child(2n-1) .button-link:hover{
+            background-color: white;
+            color: #122766;
+            transition: 0.5s;
+        }
+    }
 }
 .card-servico-content {
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    width: 70vw;
     padding: 30px 0;
+    margin: 0 auto;
 }
-.card-servico p {
+.servico p {
     line-height: 1;
     font-size: 18px;
 }
-.card-servico ul {
+.servico ul {
     display: flex;
     flex-direction: column;
+    align-items: start;
     gap: 10px;
+    width: 100%;
 }
-.card-servico h3 {
+.servico h3 {
     font-size: 28px;
     color: black;
     text-align: start;
 }
-.card-servico:first-child {
-    height: min-content;
+.servico {
+    max-width: 50%;
+    padding: 30px;
 }
 .card-img {
-    max-width: 70vw;
-    border-radius: 50px;
-    box-shadow: 0 2rem 3rem rgba(0,0,0,.175);
+    max-width: 100%;
+    border-radius: 20px;
+    /* box-shadow: 0 2rem 3rem rgba(0,0,0,.175); */
 }
-
 /* S O B R E - N Ó S */
 .about-us-banner {
     width: 100%;
@@ -256,9 +285,9 @@ p, li {
 }
 .container-sobre-nos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    gap: 200px;
+    gap: 50px;
     align-items: center;
     padding: 100px 20px;
 }
@@ -291,6 +320,20 @@ p, li {
     line-height: 2.2;
     font-size: 20px;
 }
+/* A L G U N S C L I E N T E S */
+.alguns-clientes {
+    background-color: var(--dark-blue);
+    padding: 30px 0;
+}
+.alguns-clientes img {
+    max-width: 80vw;
+}
+.alguns-clientes h1 {
+    font-size: 50px;
+    color: white;
+    margin-bottom: 30px;
+}
+
 
 /* C A S E S */
 .cases {
@@ -383,9 +426,6 @@ button {
         line-height: 1;
         font-size: 18px;
     }
-    .container-sobre-nos {
-        flex-direction: row;
-    }
     /* .container-card-servicos {
         display: grid;
         justify-items: center;
@@ -401,7 +441,7 @@ button {
         width: 45vw;
     } */
 }
-@media (min-width: 901px) {
+@media (min-width: 1001px) {
     .menu-btn {
         display: none;
     }
@@ -424,7 +464,20 @@ button {
         flex-direction: column;
         gap: 30px;
     }
-    
+    .card-servico-content {
+        align-items: start;
+        width: 70vw;
+        margin: 0 auto;
+    }
+    .servico{
+        max-width: 100%;
+    }
+    .container-sobre-nos {
+        flex-direction: column;
+    }
+    .texto-sobre-nos {
+        width: 70%;
+    }
 }
 
 @media (max-width: 720px) {
