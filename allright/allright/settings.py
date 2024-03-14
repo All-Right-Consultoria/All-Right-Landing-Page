@@ -138,7 +138,10 @@ STATICFILES_DIRS = (
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'imap.uhserver.com'
+EMAIL_PORT = 993
+EMAIL_HOST_USER = 'daniel@allright-consultoria.com.br'
+EMAIL_HOST_PASSWORD = 'Cemiramis01*'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

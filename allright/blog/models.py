@@ -42,6 +42,15 @@ class Depoimento(models.Model):
         'Case',
         on_delete=models.CASCADE
     )
-    
+
     def __str__(self):
         return f'{self.case} - Depoimento {self.autor}'
+
+
+class CadastroHomePage(models.Model):
+    nome=models.CharField(max_length=255, verbose_name='Nome')
+    email=models.EmailField(max_length=255, verbose_name='E-mail')
+    descricao=models.TextField(verbose_name='Descrição')
+
+    def __str__(self):
+        return f'{self.nome} - {self.email}'

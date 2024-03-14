@@ -4,46 +4,82 @@
 {% block 'content' %}
 <div class="main-page">
     <div class="apresentacao-geral" style="background-image: url({% static 'main-banner.jpg' %});">
-        <div class="apresentacao" >
+        <div class="apresentacao">
             <div class="texto-apresentacao">
                 <h1>Consultoria Empresarial com Ética e Resultado</h1>
                 <hr>
                 <h3>
                     <span>
-                        "A fórmula do sucesso empresarial é 
-                        uma equação aberta 
+                        "A fórmula do sucesso empresarial é
+                        uma equação aberta
                     </span>
-                    <span>onde as variáveis 
-                        estão em mutação constante, 
-                        exigindo adaptação, agilidade e inovação. 
+                    <span>onde as variáveis
+                        estão em mutação constante,
+                        exigindo adaptação, agilidade e inovação.
                     </span>
                     <br>
                     <span>
                         <b>A mudança é a única constante!"</b>
                     </span>
                 </h3>
+                <div class="nossos-cases">
+                    <a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!"
+                        class="button-link">Entre em contato conosco!</a>
+                    <a href="{% url 'cases-list' %}" class="button-link">Conheça alguns cases de sucesso All Right!</a>
+                </div>
             </div>
-            <div class="nossos-cases">
-                <a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!" class="button-link">Entre em contato conosco!</a>
-                <a href="{% url 'cases-list' %}" class="button-link">Conheça alguns cases de sucesso All Right!</a>
+            <div class="cadastro_contato">
+                {% if enviado %}
+                <h1>Cadastro concluído!</h1>
+                <h3>Aguarde que assim que possível entraremos em contato</h3>
+                {% else %}
+                <h1>Cadastre-se abaixo e o contactaremos!</h1>
+                <form method="post" class="form_cadastro_contato">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {% for field in form.visible_fields %}
+                    <div class="form_cadastro_field">
+                        <label>{{ field.label_tag }}</label>
+                        <div>
+                            {{ field.errors }}
+                            {{ field }}
+                            {{ field.help_text }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <input type="submit" value="Cadastrar" class="input-submit-contato">
+                </form>
+                {% endif %}
             </div>
         </div>
     </div>
-    <div class="servicos-sobre-nos" >
+    <div class="servicos-sobre-nos">
         <div class="servicos" id="servicos">
             <h1>Serviços Prestados</h1>
             <div class="container-card-servicos">
                 <div class="card-servico">
                     <img class="card-servico-background" src="{% static 'servicos-placeholder-1.jpg' %}" alt="">
                     <div class="card-servico-content">
-                        <div class="servico"><img src="{% static 'servicos-placeholder-1.jpg' %}" alt="" class="card-img"></div>
+                        <div class="servico"><img src="{% static 'servicos-placeholder-1.jpg' %}" alt=""
+                                class="card-img"></div>
                         <div class="servico">
                             <ul>
                                 <h3>Diagnóstico Empresarial</h3>
-                                <li><p>Análise de toda estrutura empresarial, destacando os pontos fortes e evidenciando riscos e deficiências encontradas, apontando os melhores caminhos para potencializar o sucesso do negócio</p></li>
-                                <li><p>As análises compreenderão as pessoas estratégicas, processos em geral e tecnologia administrativa</p></li>
-                                <li><p>Ao final dos trabalhos, será apresentado um relatório detalhado com as prioridades para alavancar o negócio</p></li>
-                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!" class="button-link">Conheça a realidade do seu negócio!</a></li>
+                                <li>
+                                    <p>Análise de toda estrutura empresarial, destacando os pontos fortes e evidenciando
+                                        riscos e deficiências encontradas, apontando os melhores caminhos para
+                                        potencializar o sucesso do negócio</p>
+                                </li>
+                                <li>
+                                    <p>As análises compreenderão as pessoas estratégicas, processos em geral e
+                                        tecnologia administrativa</p>
+                                </li>
+                                <li>
+                                    <p>Ao final dos trabalhos, será apresentado um relatório detalhado com as
+                                        prioridades para alavancar o negócio</p>
+                                </li>
+                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!"
+                                        class="button-link">Conheça a realidade do seu negócio!</a></li>
                             </ul>
                         </div>
                     </div>
@@ -57,11 +93,22 @@
                         <div class="servico">
                             <ul>
                                 <h3>Estuturação Sistêmica - Voltada ao Futuro</h3>
-                                <li><p>Baseado no Diagnóstico apresentado, coordenamos todo o processo de (Re) Estruturação</p></li>
-                                <li><p>Nossos trabalhos compreendem a montagem de equipe qualificada, implantação de sistemas e processos integrados</p></li>
-                                <li><p>Áreas administrativa, comercial e industrial</p></li>
-                                <li><p>Ao final dos trabalhos, a empresa estará operando independente da consultoria</p></li>
-                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!" class="button-link">Maximize seus resultados!</a></li>
+                                <li>
+                                    <p>Baseado no Diagnóstico apresentado, coordenamos todo o processo de (Re)
+                                        Estruturação</p>
+                                </li>
+                                <li>
+                                    <p>Nossos trabalhos compreendem a montagem de equipe qualificada, implantação de
+                                        sistemas e processos integrados</p>
+                                </li>
+                                <li>
+                                    <p>Áreas administrativa, comercial e industrial</p>
+                                </li>
+                                <li>
+                                    <p>Ao final dos trabalhos, a empresa estará operando independente da consultoria</p>
+                                </li>
+                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!"
+                                        class="button-link">Maximize seus resultados!</a></li>
                             </ul>
                         </div>
                     </div>
@@ -69,15 +116,26 @@
                 <div class="card-servico">
                     <img class="card-servico-background" src="{% static 'servicos-placeholder-3.jpg' %}" alt="">
                     <div class="card-servico-content">
-                        <div class="servico"><img src="{% static 'servicos-placeholder-3.jpg' %}" alt="" class="card-img"></div>
+                        <div class="servico"><img src="{% static 'servicos-placeholder-3.jpg' %}" alt=""
+                                class="card-img"></div>
                         <div class="servico">
                             <ul>
                                 <h3>Planejamento Estratégico</h3>
-                                <li><p>Processo reflexivo com as principais lideranças da empresa, levando a decisivas conclusões relativas a Posicionamento de Mercado, Missão, Visão, Valores</p></li>
-                                <li><p>Matriz SWOT (forças, fraquezas, oportunidades e ameaças)</p></li>
-                                <li><p>Plano de Ação referente aos riscos identificados</p></li>
-                                <li><p>Ferramenta de aplicação, maior dinâmica e objetividade ao processo</p></li>
-                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!" class="button-link">Direcione sua empresa para o sucesso!</a></li>
+                                <li>
+                                    <p>Processo reflexivo com as principais lideranças da empresa, levando a decisivas
+                                        conclusões relativas a Posicionamento de Mercado, Missão, Visão, Valores</p>
+                                </li>
+                                <li>
+                                    <p>Matriz SWOT (forças, fraquezas, oportunidades e ameaças)</p>
+                                </li>
+                                <li>
+                                    <p>Plano de Ação referente aos riscos identificados</p>
+                                </li>
+                                <li>
+                                    <p>Ferramenta de aplicação, maior dinâmica e objetividade ao processo</p>
+                                </li>
+                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!"
+                                        class="button-link">Direcione sua empresa para o sucesso!</a></li>
                             </ul>
                         </div>
                     </div>
@@ -85,14 +143,27 @@
                 <div class="card-servico">
                     <img class="card-servico-background" src="{% static 'servicos-placeholder-4.jpg' %}" alt="">
                     <div class="card-servico-content">
-                        <div class="servico"><img src="{% static 'servicos-placeholder-4.jpg' %}" alt="" class="card-img"></div>
-                        <div class="servico"><ul>
-                            <h3>Orçamento Empresarial, Cenários e Projetos</h3>
-                            <li><p>Implantação de metodologia de planejamento anual completo, antecipando cenários, compreendendo vendas, impostos sobre as vendas, despesas variáveis, custos e despesas, depreciação, receitas e despesas financeiras, impostos sobre o lucro e resultados</p></li>
-                            <li><p>Projetos e Investimentos</p></li>
-                            <li><p>Definição de premissas macroeconômicas</p></li>
-                            <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!" class="button-link">Planeje conosco seu futuro!</a></li>
-                        </ul></div>
+                        <div class="servico"><img src="{% static 'servicos-placeholder-4.jpg' %}" alt=""
+                                class="card-img"></div>
+                        <div class="servico">
+                            <ul>
+                                <h3>Orçamento Empresarial, Cenários e Projetos</h3>
+                                <li>
+                                    <p>Implantação de metodologia de planejamento anual completo, antecipando cenários,
+                                        compreendendo vendas, impostos sobre as vendas, despesas variáveis, custos e
+                                        despesas, depreciação, receitas e despesas financeiras, impostos sobre o lucro e
+                                        resultados</p>
+                                </li>
+                                <li>
+                                    <p>Projetos e Investimentos</p>
+                                </li>
+                                <li>
+                                    <p>Definição de premissas macroeconômicas</p>
+                                </li>
+                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!"
+                                        class="button-link">Planeje conosco seu futuro!</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="card-servico">
@@ -104,18 +175,35 @@
                         <div class="servico">
                             <ul>
                                 <h3>Sistema de Gestão de Pessoal</h3>
-                                <li><p>Método de Gestão Humana, Objetiva e Transparente
-                                </p></li>
-                                <li><p>
-                                    Satisfação interna
-                                </p></li>
-                                <li><p>Cargos & Salários</p></li>
-                                <li><p>Plano de Desenvolvimento Individual</p></li>
-                                <li><p>Identificação de Necessidades de Treinamentos</p></li>
-                                <li><p>Relatórios e Estatísticas de Desempenho</p></li>
-                                <li><p>Engajamento e Clima Organizacional</p></li>
-                                <li><p>Dimensionado conforme a estrutura da empresa</p></li>
-                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!" class="button-link">Seu time com alta performance!</a></li>
+                                <li>
+                                    <p>Método de Gestão Humana, Objetiva e Transparente
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Satisfação interna
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>Cargos & Salários</p>
+                                </li>
+                                <li>
+                                    <p>Plano de Desenvolvimento Individual</p>
+                                </li>
+                                <li>
+                                    <p>Identificação de Necessidades de Treinamentos</p>
+                                </li>
+                                <li>
+                                    <p>Relatórios e Estatísticas de Desempenho</p>
+                                </li>
+                                <li>
+                                    <p>Engajamento e Clima Organizacional</p>
+                                </li>
+                                <li>
+                                    <p>Dimensionado conforme a estrutura da empresa</p>
+                                </li>
+                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!"
+                                        class="button-link">Seu time com alta performance!</a></li>
                             </ul>
                         </div>
                     </div>
@@ -129,12 +217,23 @@
                         <div class="servico">
                             <ul>
                                 <h3>Assessoria e Conselho de Administração</h3>
-                                <li><p>Assessoria administrativa em reuniões de resultados</p></li> 
-                                <li><p>Aconselhamento nas principais decisões estratégicas e operacionais</p></li>
-                                <li><p>Suporte às decisões de investimento estratégico</p></li>
-                                <li><p>Participação em contratações de cargos estratégicos</p></li>
-                                <li><p>Apoio em negociações relevantes ao negócio</p></li>
-                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!" class="button-link">Tenha segurança nas decisões!</a></li>
+                                <li>
+                                    <p>Assessoria administrativa em reuniões de resultados</p>
+                                </li>
+                                <li>
+                                    <p>Aconselhamento nas principais decisões estratégicas e operacionais</p>
+                                </li>
+                                <li>
+                                    <p>Suporte às decisões de investimento estratégico</p>
+                                </li>
+                                <li>
+                                    <p>Participação em contratações de cargos estratégicos</p>
+                                </li>
+                                <li>
+                                    <p>Apoio em negociações relevantes ao negócio</p>
+                                </li>
+                                <li><a href="https://wa.me/5547991029445?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20para%20falar%20sobre%20um%20dos%20serviços%20oferecidos%20pela%20AllRight%20Consultoria!"
+                                        class="button-link">Tenha segurança nas decisões!</a></li>
                             </ul>
                         </div>
                     </div>
@@ -152,17 +251,18 @@
                     <h1>Profissional Responsável</h1>
                     <hr>
                     <p>
-                    MBA em Gestão Empresarial pela FGV, formação em administração e contabilidade
-                    <br>
-                    Profissional com ampla vivência em gestão financeira e empresarial. Habituado em processos de reestruturação, automatização de tarefas e controladoria para geração de valor
-                    <br>
-                    Foco em melhoria contínua com uso de indicadores de desempenho
-                    <br>
-                    Forte liderança e desenvolvimento de equipes 
-                    <br>
-                    Posicionamento e estratégia de mercado
-                    <br>
-                    Palestrante
+                        MBA em Gestão Empresarial pela FGV, formação em administração e contabilidade
+                        <br>
+                        Profissional com ampla vivência em gestão financeira e empresarial. Habituado em processos de
+                        reestruturação, automatização de tarefas e controladoria para geração de valor
+                        <br>
+                        Foco em melhoria contínua com uso de indicadores de desempenho
+                        <br>
+                        Forte liderança e desenvolvimento de equipes
+                        <br>
+                        Posicionamento e estratégia de mercado
+                        <br>
+                        Palestrante
                     </p>
                 </div>
             </div>
