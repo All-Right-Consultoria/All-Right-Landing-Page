@@ -28,7 +28,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 7svh;
-    padding: 0px 15vw;
+    padding: 0 15vw;
 }
 
 ul {
@@ -37,7 +37,7 @@ ul {
 
 a {
     color: var(--dark-blue);
-    font-family: Roboto;
+    font-family: Roboto, serif;
     font-weight: bold;
     text-decoration: none;
 
@@ -100,7 +100,7 @@ input {
 
 .input-submit-contato {
     font-size: 18px;
-    font-family: Outfit;
+    font-family: Outfit, serif;
     font-weight: bold;
 }
 
@@ -180,7 +180,7 @@ input {
 
 .footer-nav-links a {
     color: white;
-    font-family: Outfit;
+    font-family: Outfit, serif;
     font-size: 16px;
 }
 
@@ -684,13 +684,23 @@ button {
     }
 }
 
-@media (max-width: 380px) {
-
+@media (max-height: 820px) {
     .apresentacao h1 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .apresentacao h3 {
-        font-size: 20px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .apresentacao h1 {
+        font-size: 25px;
+    }
+
+    .apresentacao h3 {
+        font-size: 18px;
     }
 }
