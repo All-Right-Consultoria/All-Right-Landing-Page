@@ -10,8 +10,7 @@ services:
     volumes:
       - static_volume:/home/app/web/assets/static
       - media_volume:/home/app/web/media
-      - ./allright/:/home/app/web/
-      # - /allright/db/db.sqlite3:/home/app/web/db/db.sqlite3
+      - db_volume:/home/app/web/db
     expose:
       - 8000
     env_file:
@@ -32,3 +31,4 @@ services:
 volumes:
   static_volume:
   media_volume:
+  db_volume:
