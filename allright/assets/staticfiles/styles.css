@@ -48,6 +48,13 @@ li {
     color: black;
 }
 
+textarea,
+input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
 /* H E A D E R */
 .header-links ul {
     display: flex;
@@ -216,7 +223,7 @@ li {
     display: flex;
     flex-direction: row;
     max-width: 100svw;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
     gap: 50px;
@@ -252,6 +259,7 @@ li {
 
 .form_cadastro_field {
     margin-top: 10px;
+    font-family: Outfit, serif;
 }
 
 .nossos-cases a {
@@ -628,7 +636,7 @@ button {
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
     .apresentacao hr {
         width: 100%;
         color: white;
@@ -676,7 +684,7 @@ button {
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
 
     .apresentacao h1 {
         font-size: 28px;
