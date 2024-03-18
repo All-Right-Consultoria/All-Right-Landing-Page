@@ -50,7 +50,8 @@ class Depoimento(models.Model):
 class CadastroHomePage(models.Model):
     nome=models.CharField(max_length=255, verbose_name='Nome')
     email=models.EmailField(max_length=255, verbose_name='E-mail')
-    descricao=models.TextField(verbose_name='Descrição')
+    telefone=models.IntegerField(verbose_name='Telefone', null=True, blank=True)
+    descricao=models.TextField(verbose_name='Descrição', null=True, blank=True)
 
     def __str__(self):
         return f'{self.nome} - {self.email}'
