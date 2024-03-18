@@ -684,7 +684,17 @@ button {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-height: 820px) {
+    .apresentacao h1 {
+        font-size: 32px;
+    }
+
+    .apresentacao h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-height: 700px) {
     .apresentacao h1 {
         font-size: 25px;
     }
@@ -694,12 +704,12 @@ button {
     }
 }
 
-@media (max-height: 820px) {
+@media (max-width: 430px) {
     .apresentacao h1 {
-        font-size: 32px;
+        font-size: 22px;
     }
 
     .apresentacao h3 {
-        font-size: 22px;
+        font-size: 16px;
     }
 }
