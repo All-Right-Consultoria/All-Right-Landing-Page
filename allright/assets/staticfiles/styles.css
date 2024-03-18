@@ -216,7 +216,7 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: hsla(360, 100%, 100%, 0.3);
+    background-color: hsla(225, 70%, 24%, 0.5);
 }
 
 .apresentacao {
