@@ -42,8 +42,8 @@ def create_depoimentos(apps, schema_editor):
 def create_cases(apps, schema_editor):
     db_alias = schema_editor.connection.alias
     Case = apps.get_model('blog', 'Case')
-    britagem_imagem = os.path.join('/home/app/web/assets/static/britagem_logo.png')
-    ceramfix_imagem = os.path.join('/home/app/web/assets/static/ceramfix_logo.png')
+    britagem_imagem = os.path.join('/home/app/web/assets/staticfiles/britagem_logo.png')
+    ceramfix_imagem = os.path.join('/home/app/web/assets/staticfiles/ceramfix_logo.png')
     with open(britagem_imagem, 'rb') as f:
         britagem_image_data = f.read()
     with open(ceramfix_imagem, 'rb') as f:
