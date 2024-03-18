@@ -244,9 +244,9 @@ li {
 }
 
 .cadastro_contato {
-    background-color: hsla(225, 70%, 24%, 0.5);
+    background-color: hsla(225, 70%, 24%, 1);
     border-radius: 5px;
-    max-width: 30%;
+    width: 100svw;
     padding: 20px;
 }
 

@@ -28,32 +28,32 @@
                     <a href="{% url 'cases-list' %}" class="button-link">Conheça alguns cases de sucesso All Right!</a>
                 </div>
             </div>
-            <div class="cadastro_contato">
-                {% if enviado %}
-                <h1>Cadastro concluído!</h1>
-                <h3>Aguarde que assim que possível entraremos em contato</h3>
-                {% else %}
-                <h1>Cadastre-se abaixo e o contactaremos!</h1>
-                <form method="post" class="form_cadastro_contato">
-                    {% csrf_token %}
-                    {{ form.non_field_errors }}
-                    {% for field in form.visible_fields %}
-                    <div class="form_cadastro_field">
-                        <label>{{ field.label_tag }}</label>
-                        <div>
-                            {{ field.errors }}
-                            {{ field }}
-                            {{ field.help_text }}
-                        </div>
-                    </div>
-                    {% endfor %}
-                    <input type="submit" value="Cadastrar" class="input-submit-contato">
-                </form>
-                {% endif %}
-            </div>
         </div>
     </div>
     <div class="servicos-sobre-nos">
+        <div class="cadastro_contato">
+            {% if enviado %}
+            <h1>Cadastro concluído!</h1>
+            <h3>Aguarde que assim que possível entraremos em contato</h3>
+            {% else %}
+            <h1>Cadastre-se abaixo e o contactaremos!</h1>
+            <form method="post" class="form_cadastro_contato">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {% for field in form.visible_fields %}
+                <div class="form_cadastro_field">
+                    <label>{{ field.label_tag }}</label>
+                    <div>
+                        {{ field.errors }}
+                        {{ field }}
+                        {{ field.help_text }}
+                    </div>
+                </div>
+                {% endfor %}
+                <input type="submit" value="Cadastrar" class="input-submit-contato">
+            </form>
+            {% endif %}
+        </div>
         <div class="servicos" id="servicos">
             <h1>Serviços Prestados</h1>
             <div class="container-card-servicos">
