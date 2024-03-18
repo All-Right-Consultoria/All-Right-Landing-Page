@@ -684,23 +684,13 @@ button {
     }
 }
 
-@media (max-height: 820px) {
-    .apresentacao h1 {
-        font-size: 32px;
-    }
-
-    .apresentacao h3 {
-        font-size: 22px;
-    }
-}
-
 @media (max-height: 700px) {
     .apresentacao h1 {
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .apresentacao h3 {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -711,5 +701,15 @@ button {
 
     .apresentacao h3 {
         font-size: 16px;
+    }
+}
+
+@media (min-height: 850px) {
+    .apresentacao h1 {
+        font-size: 28px;
+    }
+
+    .apresentacao h3 {
+        font-size: 22px;
     }
 }
